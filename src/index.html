@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PySee</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script defer src="./utils/find_versions.js"></script>
+    </head>
+    <body>
+        <div class="top">
+            <h1 class="title">
+                Your python versions
+            </h1>
+            <h1 class="info">
+                <a href="./settings.html">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                </a>
+            </h1>
+        </div>
+
+        <h2>System</h2>
+        <div class="grid-container" id="system-container">
+            <div class="loader" id="system-loader"></div>
+        </div>
+
+        <h2>Homebrew</h2>
+        <div class="grid-container" id="brew-container">
+            <div class="loader" id="brew-loader"></div>
+        </div>
+
+        <h2>Anaconda</h2>
+        <div class="grid-container">
+            <h3>Coming Soon...</h3>
+        </div>
+
+    </body>
+    <script type="text/javascript">
+        // Select elements
+        let brew = document.getElementById('brew-container');
+        let system = document.getElementById('system-container');
+        let brewloader = document.getElementById('brew-loader');
+        let systemloader = document.getElementById('system-loader');
+        // Check existence of element
+        if (system != null) {
+            // Create observer for system container loader
+            var observer = new MutationObserver(function() {
+                systemloader.remove();
+            });
+            const config = { 
+                attributes: true, 
+                childList: true, 
+                characterData: true 
+            };
+            observer.observe(system, config);
+        }
+        // Check existence of element
+        if (brew != null) {
+            // Create observer for brew container loader
+            var observer = new MutationObserver(function() {
+                brewloader.remove();
+            });
+            const config = { 
+                attributes: true, 
+                childList: true, 
+                characterData: true 
+            }
+            observer.observe(brew, config);
+        }
+    </script>
+</html>
