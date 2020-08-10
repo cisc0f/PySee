@@ -14,6 +14,8 @@ async function getPythonVersions(command) {
     if (Error[Symbol.hasInstance](result))
         return;
 
+        console.log(result);
+
     return result;
 }
 
@@ -48,7 +50,7 @@ function startProcess() {
     });
 
     // Get Homebrew python versions
-    getPythonVersions("brew list").then((result) => {
+    getPythonVersions("/usr/local/Homebrew/bin/brew list").then((result) => {
         // Filtering output
         const matchArray = result.stdout.toString().split('\n');
         const hbPython = matchArray.filter((match) => match !== "");
