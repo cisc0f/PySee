@@ -1,6 +1,6 @@
 {
   "name": "pysee",
-  "productName": "pysee",
+  "productName": "PySee",
   "version": "1.0.0",
   "description": "Python versions manager",
   "main": "src/index.js",
