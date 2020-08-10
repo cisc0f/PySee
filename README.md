@@ -3,7 +3,7 @@
 **PySee** is an electron-built python version manager.
 
 ## How it works?
-This desktop application (for the moment) is MacOS only. To find all the python related stuff it execute some shell commands and parse data to display on the app.
+This desktop application (for the moment) is MacOS only. To find all the python related stuff it executes some shell commands and parse data to display on the app.
 
 ## Getting Started
 To setup and start the application:
