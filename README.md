@@ -1,4 +1,4 @@
-![image back](./src/assets/images/pysee_background.png)
+![image back](/src/assets/images/pysee_background.png)
 # PySee
 ### **PySee** is an electron-built python version manager.
 
