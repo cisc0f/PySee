@@ -56,6 +56,10 @@ function startProcess() {
         const hbPython = matchArray.filter((match) => match !== "");
         const hbData = hbPython.filter((element) => element.includes("python"));
 
+        if(hbData.length <= 0) {
+            hbData.push("No versions found")
+        }
+
         const data = {
             homebrew: hbData
         };

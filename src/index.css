@@ -1,7 +1,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: auto;
-  max-width: 38rem;
+  max-width: 80%;
   padding: 2rem;
   background-color: white;
 }
@@ -18,6 +18,13 @@ a {
   padding: 10px;
 }
 
+.grid-container-two {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: white;
+  padding: 10px;
+}
+
 .grid-item {
   background-color: #FE5D9F;
   color: white;
@@ -27,6 +34,37 @@ a {
   font-size: 1em;
   border-radius: 30px;
   text-align: center;
+}
+
+.grid-item-button {
+  background-color: white;
+  color: #FE5D9F;
+  border: 0px;
+  margin: 20px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-radius: 30px;
+  text-align: center;
+  transition: .5s;
+}
+
+.grid-item-button-active {
+  background-color: #FE5D9F;
+  color: white;
+  border: 0px;
+  margin: 20px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-radius: 30px;
+  text-align: center;
+  transition: .5s;
+}
+
+.grid-item-button:hover {
+  background-color: #FE5D9F;
+  color: white;
 }
 
 .top {

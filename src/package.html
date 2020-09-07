@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PySee</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script defer src="./utils/get_pip3.js"></script>
+    </head>
+    <body>
+        <div class="top">
+            <h1 class="title">
+                PySee
+            </h1>
+            <h1 class="info">
+                <a href="./settings.html">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                </a>
+            </h1>
+        </div>
+
+        <div class="grid-container-two">
+            <a href="./index.html"><div class="grid-item-button">Python Manager</div></a>
+            <a href="./package.html"><div class="grid-item-button-active">Pip Manager</div></a>
+        </div>
+
+        <h1>Pip3</h1>
+        <div class="grid-container-two" id="pip3-container">
+            <div class="loader" id="pip3-loader"></div>
+        </div>
+
+    </body>
+    <script type="text/javascript">
+        // Select elements
+        let pip3 = document.getElementById('pip3-container');
+        let pip3loader = document.getElementById('pip3-loader');
+        // Check existence of element
+        if (pip3 != null) {
+            // Create observer for system container loader
+            var observer = new MutationObserver(function() {
+                pip3loader.remove();
+            });
+            const config = { 
+                attributes: true, 
+                childList: true, 
+                characterData: true 
+            };
+            observer.observe(pip3, config);
+        }
+    </script>
+</html>
