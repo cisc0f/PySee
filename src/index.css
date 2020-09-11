@@ -11,6 +11,70 @@ a {
   color: white;
 }
 
+.loader-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.700);
+}
+
+.loader-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-error-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  padding: 10px 0px;
+  color: white;
+  transform: translateY(-150%);
+  animation: at-banner-slide-in 5s linear forwards;
+}
+
+.top-success-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: green;
+  text-align: center;
+  padding: 10px 0px;
+  color: white;
+  transform: translateY(-150%);
+  animation: at-banner-slide-in 5s linear forwards;
+}
+
+@keyframes at-banner-slide-in {
+  0% {
+    transform: translateY(-150%);
+  }
+  
+  5% { 
+    transform: translateY(0%);
+  }
+
+  75% {
+    transform: translateY(0%);
+  }
+
+  90% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-150%);
+  }
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -34,6 +98,17 @@ a {
   font-size: 1em;
   border-radius: 30px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-item a {
+  width: 100%;
+}
+
+.grid-item span {
+  cursor: pointer;
 }
 
 .grid-item-button {
@@ -70,6 +145,7 @@ a {
 .top {
   background-color: #FE5D9F;
   border-radius: 5em;
+  margin-top: 30px;
 }
 
 .paragraph {
@@ -108,6 +184,16 @@ a {
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
+}
+
+.search-input {
+  width: 50%;
+  margin: 30px;
+  padding: 10px;
+  font-size: 1.1em;
+  border: 0;
+  border-bottom: 3px solid #FE5D9F;
+  outline: none;
 }
 
 @-webkit-keyframes spin {

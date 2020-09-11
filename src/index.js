@@ -18,7 +18,8 @@ const createWindow = () => {
     width: 1000,
     height: 800,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   });
 
