@@ -6,8 +6,17 @@
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script defer src="./utils/get_pip3.js"></script>
+        <script defer src="./utils/pip3_uninstall.js"></script>
     </head>
     <body>
+        <div id="banner-container"></div>
+        <div id="loader-modal-container" style="display: none;">
+            <div class="loader-modal">
+                <div class="loader-container">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
         <div class="top">
             <h1 class="title">
                 PySee
@@ -27,6 +36,7 @@
         </div>
 
         <h1>Pip3</h1>
+        <input type="text" class="search-input" id="searchInput" onkeyup="searchFunction()" placeholder="Search package..." title="Type in a package name.">
         <div class="grid-container-two" id="pip3-container">
             <div class="loader" id="pip3-loader"></div>
         </div>
@@ -36,6 +46,8 @@
         // Select elements
         let pip3 = document.getElementById('pip3-container');
         let pip3loader = document.getElementById('pip3-loader');
+        let banner_container = document.getElementById('banner-container');
+        let loader_modal = document.getElementById('loader-modal-container');
         // Check existence of element
         if (pip3 != null) {
             // Create observer for system container loader
@@ -48,6 +60,35 @@
                 characterData: true 
             };
             observer.observe(pip3, config);
+        }
+
+        // Create observer for banner container
+        var observerBanner = new MutationObserver(function() {
+            loader_modal.style.display = 'none';
+        });
+        const config = { 
+            attributes: true, 
+            childList: true, 
+            characterData: true 
+        };
+        observerBanner.observe(banner_container, config);
+        
+    </script>
+    <script>
+        function searchFunction() {
+            var input, filter, container, element, txt, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            container = document.getElementById("pip3-container");
+            element = container.getElementsByTagName("div");
+            for (i = 0; i < element.length; i++) {
+                txtValue = element[i].innerText || element[i].textContent;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    element[i].style.display = "";
+                } else {
+                    element[i].style.display = "none";
+                }
+            }
         }
     </script>
 </html>
