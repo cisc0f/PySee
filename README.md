@@ -17,5 +17,4 @@ $ npm start
 
 
 ## Coming Soon...
-PySee will automatically check for other python versions downloaded with Anaconda and so on. The goal for this Electron app is also to uninstall python versions (pip packages too?) directly from the app using UI.
-PySee will also automatically detect python versions conflict.
+PySee will automatically check for other python versions downloaded with Anaconda and so on. The goal for this Electron app is also to uninstall python versions  directly from the app using UI.
