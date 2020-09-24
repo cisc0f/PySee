@@ -1,14 +1,39 @@
+:root {
+  --primary-color: #EEEEEE;
+  --accent-color: #EF476F;
+  --shadow-color: 6px 6px 16px 0 rgba(209, 205, 199, .5),
+                  -6px -6px 16px 0 rgba(255, 255, 255, .5);
+  --text-shadow-color:  0px 0px 6px var(--primary-color), 
+                        0px 0px 2px var(--accent-color);
+}
+
+@font-face {
+  font-family: RegularFont;
+  src: url("./fonts/Epilogue-Regular.ttf");
+}
+
+@font-face {
+  font-family: BoldFont;
+  src: url("./fonts/Epilogue-Bold.ttf");
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: RegularFont;
   margin: auto;
   max-width: 80%;
   padding: 2rem;
-  background-color: white;
+  background-color: var(--primary-color);
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--accent-color);
+}
+
+h1 {
+  font-family: BoldFont;
+  text-shadow: var(--text-shadow-color);
+  color: var(--accent-color);
 }
 
 .loader-modal {
@@ -78,25 +103,26 @@ a {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 10px;
 }
 
 .grid-container-two {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 10px;
 }
 
 .grid-item {
-  background-color: #FE5D9F;
-  color: white;
+  background-color:var(--primary-color);
+  box-shadow: var(--shadow-color);
+  color: var(--accent-color);
   border: 0px;
   margin: 20px;
   padding: 20px;
   font-size: 1em;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -112,51 +138,55 @@ a {
 }
 
 .grid-item-button {
-  background-color: white;
-  color: #FE5D9F;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   border: 0px;
   margin: 20px;
   padding: 20px;
   font-weight: bold;
   font-size: 1.3em;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
   transition: .5s;
 }
 
 .grid-item-button-active {
-  background-color: #FE5D9F;
-  color: white;
+  color: var(--accent-color);
+  background-color:var(--primary-color);
+  box-shadow: var(--shadow-color);
   border: 0px;
   margin: 20px;
   padding: 20px;
   font-weight: bold;
   font-size: 1.3em;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
   transition: .5s;
 }
 
 .grid-item-button:hover {
-  background-color: #FE5D9F;
-  color: white;
+  background-color:var(--primary-color);
+  box-shadow: var(--shadow-color);
 }
 
 .top {
-  background-color: #FE5D9F;
-  border-radius: 5em;
+  background-color:var(--primary-color);
+  box-shadow: var(--shadow-color);
+  border-radius: 10px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .paragraph {
-  background-color: #FE5D9F;
-  border-radius: 5em;
+  background-color:var(--primary-color);
+  box-shadow: var(--shadow-color);
+  border-radius: 10px;
   margin-top: 30px;
   text-align: center;
 }
 
 .paragraph-text {
-  color: white;
+  color: var(--accent-color);
   padding: 30px 40px;
 }
 
@@ -167,19 +197,19 @@ a {
 .title {
   display: inline-block;
   padding: 10px 40px;
-  color: white;
+  color: var(--accent-color);
 }
 
 .info {
   float: right;
   padding: 10px 40px;
-  color: white;
+  color: var(--accent-color);
 }
 
 .loader {
   border: 5px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 5px solid #FE5D9F;
+  border-top: 5px solid var(--accent-color);
   width: 50px;
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
@@ -192,7 +222,9 @@ a {
   padding: 10px;
   font-size: 1.1em;
   border: 0;
-  border-bottom: 3px solid #FE5D9F;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-color);
   outline: none;
 }
 
