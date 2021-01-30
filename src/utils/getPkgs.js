@@ -25,7 +25,7 @@ function startProcess() {
     var pip3_container = document.getElementById('pip3-container');
 
     // Get System python versions
-    getPipList("pip3 list").then((result) => {
+    getPipList("python3 -m pip list").then((result) => {
         // Filtering output
         const matchArray = result.stdout.toString().split('\n');
         const splicedArray = matchArray.splice(2, matchArray.length);

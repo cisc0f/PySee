@@ -1,14 +1,40 @@
+:root {
+  --primary-color: #EEEEEE;
+  --accent-color: black;
+  --glass: linear-gradient(to right bottom, 
+            rgba(255,255,255,0.7),
+            rgba(255,255,255,0.3));
+}
+
+@font-face {
+  font-family: RegularFont;
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: BoldFont;
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: RegularFont;
   margin: auto;
   max-width: 80%;
+  min-height: 100vh;
   padding: 2rem;
-  background-color: white;
+  background: var(--glass);
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--accent-color);
+}
+
+h1 {
+  font-family: BoldFont;
+  color: var(--accent-color);
 }
 
 .loader-modal {
@@ -78,25 +104,27 @@ a {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: white;
+  background: var(--glass);
+  border-radius: 1.5rem;
   padding: 10px;
 }
 
 .grid-container-two {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: white;
+  background: var(--glass);
+  border-radius: 1.5rem;
   padding: 10px;
 }
 
 .grid-item {
-  background-color: #FE5D9F;
-  color: white;
+  background:var(--glass);
+  color: var(--accent-color);
   border: 0px;
   margin: 20px;
   padding: 20px;
   font-size: 1em;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -112,51 +140,49 @@ a {
 }
 
 .grid-item-button {
-  background-color: white;
-  color: #FE5D9F;
+  background: transparent;
+  color: var(--accent-color);
   border: 0px;
   margin: 20px;
   padding: 20px;
-  font-weight: bold;
   font-size: 1.3em;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
   transition: .5s;
 }
 
 .grid-item-button-active {
-  background-color: #FE5D9F;
-  color: white;
+  color: var(--accent-color);
+  background: var(--glass);
   border: 0px;
   margin: 20px;
   padding: 20px;
-  font-weight: bold;
   font-size: 1.3em;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
-  transition: .5s;
+  transition: .3s;
 }
 
 .grid-item-button:hover {
-  background-color: #FE5D9F;
-  color: white;
+  background:var(--glass);
 }
 
 .top {
-  background-color: #FE5D9F;
-  border-radius: 5em;
+  background:var(--glass);
+  border-radius: 1.5rem;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .paragraph {
-  background-color: #FE5D9F;
-  border-radius: 5em;
+  background:var(--glass);
+  border-radius: 1.5rem;
   margin-top: 30px;
   text-align: center;
 }
 
 .paragraph-text {
-  color: white;
+  color: var(--accent-color);
   padding: 30px 40px;
 }
 
@@ -167,19 +193,19 @@ a {
 .title {
   display: inline-block;
   padding: 10px 40px;
-  color: white;
+  color: var(--accent-color);
 }
 
 .info {
   float: right;
   padding: 10px 40px;
-  color: white;
+  color: var(--accent-color);
 }
 
 .loader {
   border: 5px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 5px solid #FE5D9F;
+  border-top: 5px solid var(--accent-color);
   width: 50px;
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
@@ -187,13 +213,20 @@ a {
 }
 
 .search-input {
-  width: 50%;
-  margin: 30px;
+  width: 70%;
   padding: 10px;
   font-size: 1.1em;
   border: 0;
-  border-bottom: 3px solid #FE5D9F;
+  border-radius: 1rem;
+  background: var(--glass);
   outline: none;
+}
+
+.search-input-container {
+  background: var(--glass);
+  border-radius: 1.5rem;
+  margin: 20px 0px;
+  padding: 20px;
 }
 
 @-webkit-keyframes spin {
