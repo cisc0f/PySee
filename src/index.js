@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const isDev = true;
+const isDev = false;
 
 // Development setting
 if(isDev) {
