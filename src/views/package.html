@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>PySee</title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../assets/css/index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script defer src="./utils/get_pip3.js"></script>
-        <script defer src="./utils/pip3_uninstall.js"></script>
+        <script defer src="../utils/getPkgs.js"></script>
+        <script defer src="../utils/uninstallPkg.js"></script>
     </head>
     <body>
         <div id="banner-container"></div>
@@ -36,7 +36,9 @@
         </div>
 
         <h1>Pip3</h1>
-        <input type="text" class="search-input" id="searchInput" onkeyup="searchFunction()" placeholder="Search package..." title="Type in a package name.">
+        <div class="search-input-container">
+            <input type="text" class="search-input" id="searchInput" onkeyup="searchFunction()" placeholder="Search package..." title="Type in a package name.">
+        </div>
         <div class="grid-container-two" id="pip3-container">
             <div class="loader" id="pip3-loader"></div>
         </div>

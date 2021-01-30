@@ -50,7 +50,7 @@ function startProcess() {
     });
 
     // Get Homebrew python versions
-    getPythonVersions("/usr/local/Homebrew/bin/brew list").then((result) => {
+    getPythonVersions("/usr/local/Homebrew/bin/brew list --formula").then((result) => {
         // Filtering output
         const matchArray = result.stdout.toString().split('\n');
         const hbPython = matchArray.filter((match) => match !== "");

@@ -1,28 +1,30 @@
 :root {
   --primary-color: #EEEEEE;
-  --accent-color: #EF476F;
-  --shadow-color: 6px 6px 16px 0 rgba(209, 205, 199, .5),
-                  -6px -6px 16px 0 rgba(255, 255, 255, .5);
-  --text-shadow-color:  0px 0px 6px var(--primary-color), 
-                        0px 0px 2px var(--accent-color);
+  --accent-color: black;
+  --glass: linear-gradient(to right bottom, 
+            rgba(255,255,255,0.7),
+            rgba(255,255,255,0.3));
 }
 
 @font-face {
   font-family: RegularFont;
-  src: url("./fonts/Epilogue-Regular.ttf");
+  src: url("../fonts/Poppins-Regular.ttf");
 }
 
 @font-face {
   font-family: BoldFont;
-  src: url("./fonts/Epilogue-Bold.ttf");
+  src: url("../fonts/Poppins-SemiBold.ttf");
 }
 
 body {
   font-family: RegularFont;
   margin: auto;
   max-width: 80%;
+  min-height: 100vh;
   padding: 2rem;
-  background-color: var(--primary-color);
+  background: var(--glass);
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
 }
 
 a {
@@ -32,7 +34,6 @@ a {
 
 h1 {
   font-family: BoldFont;
-  text-shadow: var(--text-shadow-color);
   color: var(--accent-color);
 }
 
@@ -103,20 +104,21 @@ h1 {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: var(--primary-color);
+  background: var(--glass);
+  border-radius: 1.5rem;
   padding: 10px;
 }
 
 .grid-container-two {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: var(--primary-color);
+  background: var(--glass);
+  border-radius: 1.5rem;
   padding: 10px;
 }
 
 .grid-item {
-  background-color:var(--primary-color);
-  box-shadow: var(--shadow-color);
+  background:var(--glass);
   color: var(--accent-color);
   border: 0px;
   margin: 20px;
@@ -138,12 +140,11 @@ h1 {
 }
 
 .grid-item-button {
-  background-color: var(--primary-color);
+  background: transparent;
   color: var(--accent-color);
   border: 0px;
   margin: 20px;
   padding: 20px;
-  font-weight: bold;
   font-size: 1.3em;
   border-radius: 10px;
   text-align: center;
@@ -152,35 +153,30 @@ h1 {
 
 .grid-item-button-active {
   color: var(--accent-color);
-  background-color:var(--primary-color);
-  box-shadow: var(--shadow-color);
+  background: var(--glass);
   border: 0px;
   margin: 20px;
   padding: 20px;
-  font-weight: bold;
   font-size: 1.3em;
   border-radius: 10px;
   text-align: center;
-  transition: .5s;
+  transition: .3s;
 }
 
 .grid-item-button:hover {
-  background-color:var(--primary-color);
-  box-shadow: var(--shadow-color);
+  background:var(--glass);
 }
 
 .top {
-  background-color:var(--primary-color);
-  box-shadow: var(--shadow-color);
-  border-radius: 10px;
+  background:var(--glass);
+  border-radius: 1.5rem;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .paragraph {
-  background-color:var(--primary-color);
-  box-shadow: var(--shadow-color);
-  border-radius: 10px;
+  background:var(--glass);
+  border-radius: 1.5rem;
   margin-top: 30px;
   text-align: center;
 }
@@ -217,15 +213,20 @@ h1 {
 }
 
 .search-input {
-  width: 50%;
-  margin: 30px;
+  width: 70%;
   padding: 10px;
   font-size: 1.1em;
   border: 0;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  box-shadow: var(--shadow-color);
+  border-radius: 1rem;
+  background: var(--glass);
   outline: none;
+}
+
+.search-input-container {
+  background: var(--glass);
+  border-radius: 1.5rem;
+  margin: 20px 0px;
+  padding: 20px;
 }
 
 @-webkit-keyframes spin {
